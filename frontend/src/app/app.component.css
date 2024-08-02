@@ -16,6 +16,7 @@
   background-color: var(--color-almost_white);
   border-radius: 12px;
   box-shadow: 0 1px 17px rgba(0,0,0,0.09);
+  padding: 0;
 }
 
 @media (max-width: 576px) {
@@ -23,4 +24,12 @@
     width: 90%;
     height: 70vh;
   }
+}
+
+#price-block {
+  width: 30%;
+  height: 100%;
+  float: right;
+  background: linear-gradient(to left bottom, var(--color-dark-blue), var(--color-light-blue));
+  border-radius: 12px;
 }
