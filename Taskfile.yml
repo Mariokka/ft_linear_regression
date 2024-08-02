@@ -1,0 +1,22 @@
+version: '3'
+
+silent: true
+
+tasks:
+
+  install-frontend:
+    dir: frontend
+    cmds:
+      - npm ci
+
+  start-frontend:
+    deps:
+      - task: stop-frontend
+    dir: frontend
+    cmds:
+      - ng serve --open
+
+  stop-frontend:
+    cmds:
+      - cmd: kill -9 "$(lsof -sTCP:LISTEN -ti tcp:4200)"
+        ignore_error: true
