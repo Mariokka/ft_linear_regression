@@ -46,6 +46,8 @@
   width: 66%;
   height: 100%;
   float: left;
+  display: flex;
+  flex-direction: column;
 }
 
 #input-field-for-mileage {
@@ -64,4 +66,26 @@ input::placeholder {
 input:focus {
   box-shadow: none;
   border-color: var(--color-dark-gray);
+}
+
+img {
+  height: 250px;
+  opacity: 93%;
+}
+
+@media (max-width: 640px) {
+  #card{
+    position: relative;
+  }
+  img {
+    height: 180px;
+    position: absolute;
+    bottom: 30px;
+  }
+}
+
+@media (max-height: 480px) and (max-width: 640px){
+  img {
+    visibility: hidden;
+  }
 }
