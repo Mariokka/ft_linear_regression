@@ -27,9 +27,16 @@
 }
 
 #price-block {
-  width: 30%;
+  width: 34%;
   height: 100%;
   float: right;
   background: linear-gradient(to left bottom, var(--color-dark-blue), var(--color-light-blue));
   border-radius: 12px;
+}
+
+#mileage-block {
+  padding: 24px;
+  width: 66%;
+  height: 100%;
+  float: left;
 }
