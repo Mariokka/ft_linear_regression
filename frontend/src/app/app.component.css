@@ -89,3 +89,10 @@ img {
     visibility: hidden;
   }
 }
+
+#price {
+  text-align: center;
+  font-size: 70px;
+  color: var(--color-almost_white);
+  padding-top: 44px;
+}

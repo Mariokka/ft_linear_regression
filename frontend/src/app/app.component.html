@@ -1,6 +1,6 @@
 <div id="whole-page">
   <div id="headline">
-    ESTIMATE YOUR COST
+    ESTIMATE THE PRICE
   </div>
 
   <div class="row">
@@ -10,11 +10,13 @@
         <form>
           <input id="input-field-for-mileage"
                  class="form-control"
-                 placeholder="42000">
+                 placeholder="42000 km">
         </form>
         <div><img src="assets/car.png" alt="car"></div>
       </div>
-      <div id="price-block"></div>
+      <div id="price-block">
+        <div id="price">€{{estimatedPrice}}</div>
+      </div>
     </div>
   </div>
 </div>
