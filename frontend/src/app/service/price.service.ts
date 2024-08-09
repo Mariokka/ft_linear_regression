@@ -12,7 +12,7 @@ export class PriceService {
   getPrice(mileage: number): Observable<any> {
     return this.httpClient.get<any>(`http://127.0.0.1:5000/price?mileage=${mileage}`).pipe(
       map((response) => {
-        return Number(response.price);
+        return parseInt(response.price);
       })
     )
   }

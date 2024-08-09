@@ -17,7 +17,10 @@
         <div><img src="assets/car.png" alt="car"></div>
       </div>
       <div id="price-block">
-        <div id="price">€{{estimatedPrice}}</div>
+        <div id="price"
+             [ngClass]="{'smallFont' : estimatedPrice>99999, 'evenSmaller' : estimatedPrice>9999999999}">
+          €{{estimatedPrice}}
+        </div>
       </div>
     </div>
   </div>

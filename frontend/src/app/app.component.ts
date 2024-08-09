@@ -16,7 +16,7 @@ export class AppComponent {
     if (mileage === '') {
       this.estimatedPrice = 0;
     } else {
-      this.priceService.getPrice(Number(mileage)).subscribe((value) => {
+      this.priceService.getPrice(parseInt(mileage)).subscribe((value) => {
           this.estimatedPrice = value;
         }
       )

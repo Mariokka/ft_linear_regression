@@ -96,3 +96,11 @@ img {
   color: var(--color-almost_white);
   padding-top: 44px;
 }
+
+#price.smallFont {
+  font-size: 40px;
+}
+
+#price.evenSmaller {
+  font-size: 20px;
+}
