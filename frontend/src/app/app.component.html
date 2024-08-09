@@ -10,7 +10,9 @@
         <form>
           <input id="input-field-for-mileage"
                  class="form-control"
-                 placeholder="42000 km">
+                 placeholder="42000 km"
+                 #mileage
+                 (input)="estimate(mileage.value)">
         </form>
         <div><img src="assets/car.png" alt="car"></div>
       </div>

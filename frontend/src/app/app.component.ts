@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {PriceService} from "./service/price.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   estimatedPrice: number = 0;
+
+  constructor(private priceService: PriceService) {
+  }
+
+  estimate(mileage: string) {
+    if (mileage === '') {
+      this.estimatedPrice = 0;
+    } else {
+      this.priceService.getPrice(Number(mileage)).subscribe((value) => {
+          this.estimatedPrice = value;
+        }
+      )
+    }
+  }
 }
