@@ -16,6 +16,15 @@ tasks:
     cmds:
       - ng serve --open
 
+  start-backend:
+    dir: backend
+    cmds:
+      - python3 app.py
+
+  start:
+    cmds:
+      - task --parallel start-backend start-frontend
+
   stop-frontend:
     cmds:
       - cmd: kill -9 "$(lsof -sTCP:LISTEN -ti tcp:4200)"
