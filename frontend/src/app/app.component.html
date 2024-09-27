@@ -18,8 +18,13 @@
       </div>
       <div id="price-block">
         <div id="price"
+             *ngIf="estimatedPrice >= 0"
              [ngClass]="{'smallFont' : estimatedPrice>99999, 'evenSmaller' : estimatedPrice>9999999999}">
           €{{estimatedPrice}}
+        </div>
+        <div id="no-thank-you-text"
+             *ngIf="estimatedPrice < 0">
+          You would actually have to pay us to take that car of yours
         </div>
       </div>
     </div>
