@@ -29,10 +29,6 @@ for _ in range(numberOfIterations):
     theta0 = theta0 - temp_theta0
     theta1 = theta1 - temp_theta1
 
-#     if _ % 100 == 0:
-#         cost = (1/(2*numberOfObservations)) * np.sum((predictedPrices - prices) ** 2)
-#         print(f"Iteration {_}: Cost {cost}, theta0 {theta0}, theta1 {theta1}")
-
 @app.route('/')
 def home():
     return "This is my Flask backend"
