@@ -5,23 +5,23 @@ silent: true
 tasks:
 
   install-frontend:
-    dir: frontend
+    dir: price_estimation/frontend
     cmds:
       - npm ci
 
   start-frontend:
     deps:
       - task: stop-frontend
-    dir: frontend
+    dir: price_estimation/frontend
     cmds:
       - ng serve --open
 
   start-backend:
-    dir: backend
+    dir: price_estimation/backend
     cmds:
       - python3 app.py
 
-  start:
+  start-price-estimation:
     cmds:
       - task --parallel start-backend start-frontend
 
@@ -29,3 +29,8 @@ tasks:
     cmds:
       - cmd: kill -9 "$(lsof -sTCP:LISTEN -ti tcp:4200)"
         ignore_error: true
+
+  train-model:
+    dir: model
+    cmds:
+      - python3 train_model.py
