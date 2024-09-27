@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   assertNotNegative(event: KeyboardEvent) {
-    if (event.key === '-') {
+    if (event.key === '-' || event.key === 'e' || event.key === ',') {
       event.preventDefault();
     }
   }
