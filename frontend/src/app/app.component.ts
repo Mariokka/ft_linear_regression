@@ -22,4 +22,10 @@ export class AppComponent {
       )
     }
   }
+
+  assertNotNegative(event: KeyboardEvent) {
+    if (event.key === '-') {
+      event.preventDefault();
+    }
+  }
 }

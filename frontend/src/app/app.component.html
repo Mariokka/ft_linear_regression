@@ -11,7 +11,9 @@
           <input id="input-field-for-mileage"
                  class="form-control"
                  placeholder="42000 km"
+                 type="number"
                  #mileage
+                 (keydown)="assertNotNegative($event)"
                  (input)="estimate(mileage.value)">
         </form>
         <div><img src="assets/car.png" alt="car"></div>

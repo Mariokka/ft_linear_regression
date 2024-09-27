@@ -68,6 +68,15 @@ input:focus {
   border-color: var(--color-dark-gray);
 }
 
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  -moz-appearance: textfield;
+}
+
 img {
   height: 250px;
   opacity: 93%;
