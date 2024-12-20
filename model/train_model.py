@@ -16,14 +16,11 @@ mean_mileage = np.mean(mileages)
 std_mileage = np.std(mileages)
 normalized_mileages = (mileages - mean_mileage) / std_mileage
 
-@app.route('/train')
 def train_model():
     theta0, theta1 = calculate_thetas()
 
     with open('result.txt', 'w') as file:
         file.write(f"{theta0}\n{theta1}\n{mean_mileage}\n{std_mileage}\n")
-
-    return jsonify({'theta0': theta0, 'theta1': theta1, 'mean_mileage': mean_mileage, 'std_mileage': std_mileage})
 
 def calculate_thetas():
     theta0 = 0
@@ -40,5 +37,4 @@ def calculate_thetas():
 
     return theta0, theta1
 
-if __name__ == '__main__':
-    app.run(port=5001, debug=True)
+train_model()

@@ -9,6 +9,11 @@ tasks:
     cmds:
       - npm ci
 
+  stop-frontend:
+    cmds:
+      - cmd: kill -9 "$(lsof -sTCP:LISTEN -ti tcp:4200)"
+        ignore_error: true
+
   start-frontend:
     deps:
       - task: stop-frontend
@@ -24,11 +29,6 @@ tasks:
   start-price-estimation:
     cmds:
       - task --parallel start-backend start-frontend
-
-  stop-frontend:
-    cmds:
-      - cmd: kill -9 "$(lsof -sTCP:LISTEN -ti tcp:4200)"
-        ignore_error: true
 
   train-model:
     dir: model
